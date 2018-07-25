@@ -57,9 +57,8 @@ App = {
     var loader = $("#loader");
     var content = $("#content");
 
-    // loader.show();
-    // content.hide();
-    content.show();
+    loader.show();
+    content.hide();
 
     // Load account data
     web3.eth.getCoinbase(function(err, account) {
@@ -114,8 +113,8 @@ App = {
       return instance.vote(candidateId, { from: App.account });
     }).then(function(result) {
       // Wait for votes to update
-      $("#loader").hide();
-      $("#content").show();
+      $("#content").hide();
+      $("#loader").show();
     }).catch(function(err) {
       console.error(err);
     });
